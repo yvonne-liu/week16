@@ -6,17 +6,18 @@ import Html.Attributes exposing (..)
 
 view model =
     div [ class "screen-container" ]
-        [ div [ class "half-screen-btn half-screen-btn--options" ]
-            [ button [] [ text "My contraceptive options" ] ]
-        , div
-            [ class "half-screen-btn half-screen-btn--monitor" ]
-            [ button [] [ text "My contraceptives monitor" ] ]
+        [ div [ class "half-screen half-screen--options" ]
+            [ button
+                [ class "half-screen--button" ]
+                [ text "my options" ]
+            ]
+        , div [ class "half-screen half-screen--monitor" ]
+            [ button
+                [ class "half-screen--button" ]
+                [ text "my space" ]
+            ]
         ]
 
 
 main =
-    view "dummy model"
-
-
-
--- why main = view?
+    view "homepage"

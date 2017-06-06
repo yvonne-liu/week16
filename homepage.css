@@ -1,0 +1,27 @@
+.screen-container {
+  height: 100vh;
+}
+
+.half-screen {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.half-screen--button {
+  height: 50vh;
+  border: none;
+  background: none;
+  font-size: 3em;
+  color: white;
+}
+
+.half-screen--options {
+  background-color: rgb(255, 140, 99);
+}
+
+.half-screen--monitor {
+  background-color: rgb(59, 229, 195);
+}
