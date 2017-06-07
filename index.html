@@ -10,7 +10,8 @@
 
     <script src="elm.js"></script>
     <script>
-      Elm.BeginningElm.embed(document.getElementById("elm-code-is-loaded-here"));
+    var elmCode = document.getElementById("elm-code-is-loaded-here");
+      Elm.Main.embed(elmCode);
     </script>
   </body>
 </html>
