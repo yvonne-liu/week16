@@ -3,6 +3,8 @@ module Main exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Svg exposing (..)
+import Svg.Attributes exposing (..)
 
 
 main =
@@ -55,16 +57,47 @@ choosePage model =
 
 
 home model =
-    div [ class "screen-container" ]
-        [ div [ class "half-screen half-screen--options" ]
+    div [ Html.Attributes.class "screen-container" ]
+        [ div [ Html.Attributes.class "half-screen half-screen--options" ]
             [ button
-                [ class "half-screen--button", onClick (ChangeView "options") ]
-                [ text "my options" ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "options") ]
+                [ Html.text "my options" ]
             ]
-        , div [ class "half-screen half-screen--monitor" ]
+        , svg
+            [ Svg.Attributes.class "svg-home", fill "none", attribute "stroke" "white", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
+            [ Svg.node "circle"
+                [ attribute "cx" "5", attribute "cy" "6", attribute "r" "4" ]
+                []
+            , Html.text " "
+            , Svg.node "circle"
+                [ attribute "cx" "27", attribute "cy" "6", attribute "r" "4" ]
+                []
+            , Html.text " "
+            , Svg.path [ d "M10 8 L22 8 L16 30 z" ]
+                []
+            , Html.text " "
+            ]
+        , div [ Html.Attributes.class "half-screen half-screen--monitor" ]
             [ button
-                [ class "half-screen--button" ]
-                [ text "my space" ]
+                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.text "my space" ]
+            ]
+        ]
+
+
+
+-- options : Model -> Html Msg
+
+
+options model =
+    div [ Html.Attributes.class "screen-container" ]
+        [ elmHubHeader
+        , div [ Html.Attributes.class "full-screen" ]
+            [ p [ Html.Attributes.class "full-screen__text" ]
+                [ Html.text "Are you comfortable with your current choice of contraceptive? Do you know all your options? Have you asked all the right questions?" ]
+            , button
+                [ Html.Attributes.class "full-screen__button" ]
+                [ Html.text "Learn about your contraceptive choices" ]
             ]
         ]
 
@@ -74,37 +107,30 @@ home model =
 
 
 contraceptiveTypes model =
-    div [ class "screen-container" ]
+    div [ Html.Attributes.class "screen-container" ]
         [ elmHubHeader
         , div
-            [ class "half-screen half-screen--non-hormonal" ]
+            [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ class "half-screen--button" ]
-                [ text "Non-hormonal" ]
+                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.text "Non-hormonal" ]
             ]
-        , div [ class "half-screen half-screen--hormonal" ]
+        , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
-                [ class "half-screen--button" ]
-                [ text "Hormonal" ]
-            , p [] [ text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
+                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.text "Hormonal" ]
+            , p [] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
         ]
 
 
 elmHubHeader =
-    nav [ class "nav-container" ]
-        [ div [ class "nav-container__image" ]
-            [ img [ class "nav-image", src "http://via.placeholder.com/50x50" ] []
+    nav [ Html.Attributes.class "nav-container" ]
+        [ div [ Html.Attributes.class "nav-container__image" ]
+            [ img [ Html.Attributes.class "nav-image", src "http://via.placeholder.com/50x50" ] []
             ]
-        , div [ class "nav-tracker-button" ]
-            [ a [ class "nav-tracker-button__link", href "#" ]
-                [ text "My tracker" ]
+        , div [ Html.Attributes.class "nav-tracker-button" ]
+            [ Html.a [ Html.Attributes.class "nav-tracker-button__link", href "#" ]
+                [ Html.text "My tracker" ]
             ]
         ]
-
-
--- options : Model -> Html Msg
-
-
-options model =
-    h1 [] [ text "Hi guys" ]
