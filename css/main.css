@@ -163,3 +163,15 @@ body {
   border-left: 0;
   border-right: 0;
 }
+
+.contra-methods-item {
+  padding: 1em;
+  background: palevioletred;
+  font-size: 1.25em;
+  text-align: center;
+  color: white;
+  border: 3px solid pink;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}

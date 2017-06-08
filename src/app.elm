@@ -145,11 +145,11 @@ nonhormonal model =
             , div [ Html.Attributes.class "contra-methods-tab" ]
                 [ h2 [] [ Html.text "Hormonal" ] ]
             ]
-        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Diaphragm/cap with spermicide" ]
-        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Male Condom" ]
-        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Female Condom" ]
-        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "IUD" ]
-        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Natural Family Planning" ]
+        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "Diaphragm/cap with spermicide" ]
+        , section [ Html.Attributes.class " contra-methods-item NH-Methods" ] [ Html.text "Male Condom" ]
+        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "Female Condom" ]
+        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "IUD" ]
+        , section [ Html.Attributes.class "contra-methods-item\n        NH-Methods" ] [ Html.text "Natural Family Planning" ]
         ]
 
 
