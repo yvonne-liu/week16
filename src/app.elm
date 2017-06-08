@@ -24,21 +24,6 @@ type Msg
 
 
 
--- | Diaphragm
--- | MaleCondom
--- update : Msg -> Model -> Model
--- update msg model =
---   case msg of
---     ToggleNotifications ->
---       { model | notifications = not model.notifications }
---
---     ToggleAutoplay ->
---       { model | autoplay = not model.autoplay }
---
---     ToggleLocation ->
---       { model | location = not model.location }
-
-
 model =
     ""
 
@@ -162,20 +147,9 @@ nonhormonal model =
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Female Condom" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "IUD" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Natural Family Planning" ]
-
-        -- , div []
-        -- [conmethod Diaphragm "Diaphragm"
-        -- , conmethod MaleCondom "Male Condom"
-        -- ]
         ]
 
 
-
--- conmethod : msg -> String -> Html msg
--- conmethod msg name =
---     div [ type_ "conmethod", onclick msg ] []
---     , text name
---
 
 
 appHeader =
