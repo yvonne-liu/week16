@@ -91,7 +91,7 @@ home model =
 
 options model =
     div [ Html.Attributes.class "screen-container" ]
-        [ elmHubHeader
+        [ appHeader
         , div [ Html.Attributes.class "full-screen" ]
             [ p [ Html.Attributes.class "full-screen__text" ]
                 [ Html.text "Are you comfortable with your current choice of contraceptive? Do you know all your options? Have you asked all the right questions?" ]
@@ -108,7 +108,7 @@ options model =
 
 contraceptiveTypes model =
     div [ Html.Attributes.class "screen-container" ]
-        [ appHubHeader
+        [ appHeader
         , div
             [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
@@ -125,7 +125,7 @@ contraceptiveTypes model =
 
 
 nonhormonal model =
-    div [ class "screen-container" ]
+    div [ Html.Attributes.class "screen-container" ]
         [ appHeader ]
 
 
