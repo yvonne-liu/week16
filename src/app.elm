@@ -23,7 +23,6 @@ type Msg
     = ChangeView String
 
 
-
 model =
     ""
 
@@ -138,17 +137,20 @@ contraceptiveTypes model =
 nonhormonal model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
-        , h1 [] [ Html.text "CONTRACEPTIVE METHODS" ]
-        , h2 [] [ Html.text "Non-hormonal" ]
-        , h2 [] [ Html.text "Hormonal" ]
+        , header [ Html.Attributes.class "contra-methods-header" ]
+            [ h1 [] [ Html.text "CONTRACEPTIVE METHODS" ] ]
+        , div [ Html.Attributes.class "contra-methods-tab-container" ]
+            [ div [ Html.Attributes.class "contra-methods-tab" ]
+                [ h2 [] [ Html.text "Non-hormonal" ] ]
+            , div [ Html.Attributes.class "contra-methods-tab" ]
+                [ h2 [] [ Html.text "Hormonal" ] ]
+            ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Diaphragm/cap with spermicide" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Male Condom" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Female Condom" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "IUD" ]
         , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Natural Family Planning" ]
         ]
-
-
 
 
 appHeader =
