@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .screen-container {
   height: 100vh;
 }
@@ -11,7 +17,7 @@
 }
 
 .half-screen--button {
-  height: 50vh;
+  height: 30vh;
   border: none;
   background: none;
   font-size: 3em;
@@ -23,5 +29,38 @@
 }
 
 .half-screen--monitor {
+  background-color: rgb(59, 229, 195);
+}
+
+/* This code is for the nav bar */
+.nav-container {
+  padding: 10px 20px;
+}
+
+.nav-container__image {
+  display: inline-block;
+  width: 50%;
+}
+
+.nav-image {
+
+}
+
+.nav-tracker-button {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+.nav-tracker-button__link {
+
+}
+
+/* This code is for the contraceptive types page */
+.half-screen--non-hormonal {
+  background-color: rgb(255, 140, 99);
+}
+
+.half-screen--hormonal {
   background-color: rgb(59, 229, 195);
 }
