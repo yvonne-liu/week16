@@ -11,6 +11,10 @@ body {
   height: 100%;
 }
 
+.italics {
+  font-style: italic;
+}
+
 /* set height of page to 100% */
 #elm-code-is-loaded-here,
 .app-model,
@@ -35,6 +39,10 @@ body {
 .calendar-header {
   width: 3em;
   height: 3em;
+}
+
+.nav-container__svg {
+  padding-top: 0.5em;
 }
 
 

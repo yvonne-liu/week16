@@ -23,7 +23,6 @@ type Msg
     = ChangeView String
 
 
-
 model =
     ""
 
@@ -104,7 +103,17 @@ options model =
         [ appHeader
         , div [ Html.Attributes.class "full-screen" ]
             [ p [ Html.Attributes.class "full-screen__text" ]
-                [ Html.text "Are you comfortable with your current choice of contraceptive? Do you know all your options? Have you asked all the right questions?" ]
+                [ Html.text "Are you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "comfortable " ]
+                , Html.text "with your current choice of contraceptive? Do you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "know " ]
+                , Html.text "all your options? Have you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "asked " ]
+                , Html.text "all the right questions?"
+                ]
             , button
                 [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveTypes") ]
                 [ Html.text "Learn about your contraceptive choices" ]
@@ -149,11 +158,9 @@ nonhormonal model =
         ]
 
 
-
-
 appHeader =
     nav [ Html.Attributes.class "nav-container" ]
-        [ div [ Html.Attributes.class "nav-container__image" ]
+        [ div [ Html.Attributes.class "nav-container__svg nav-container__image" ]
             [ svg
                 [ Svg.Attributes.class "svg-header", fill "none", attribute "stroke" "palevioletred", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
                 [ Svg.node "circle"
@@ -169,7 +176,7 @@ appHeader =
                 , Html.text " "
                 ]
             ]
-        , div [ Html.Attributes.class "nav-tracker-button" ]
+        , div [ Html.Attributes.class "nav-container__svg nav-tracker-button" ]
             [ svg [ Svg.Attributes.class "calendar-header", fill "palevioletred", attribute "stroke" "palevioletred", attribute "stroke-width" "18", viewBox "0 0 1000 1000", attribute "x" "0px", attribute "xml:space" "preserve", attribute "y" "0px" ]
                 [ g []
                     [ Svg.path [ d "M178.4,836.9h91.9c8.5,0,15.3-6.8,15.3-15.3V745c0-8.5-6.8-15.3-15.3-15.3h-91.9c-8.5,0-15.3,6.8-15.3,15.3v76.6C163.1,830,170,836.9,178.4,836.9z M193.8,760.3H255v45.9h-61.3V760.3z" ]
