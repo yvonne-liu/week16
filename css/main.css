@@ -72,6 +72,7 @@ body {
 .half-screen {
   height: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -81,12 +82,13 @@ body {
   height: 50%;
   border: none;
   background: none;
+  padding: 1em;
   font-size: 1.5em;
   color: white;
 }
 
 .half-screen--options {
-  background-color: rgb(255, 140, 99);
+  background-color: palevioletred;
 }
 
 .half-screen--monitor {
@@ -120,13 +122,17 @@ body {
 
 /* This code is for the contraceptive types page */
 .contraceptive-tag {
-  color: white; 
+  padding: 0 1em 1em 1em;
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+  color: white;
 }
 
 .half-screen--non-hormonal {
-  background-color: rgb(255, 140, 99);
+  background-color: palevioletred;
 }
 
 .half-screen--hormonal {
-  background-color: rgb(59, 229, 195);
+  background-color: rgb(255, 140, 99);
 }
