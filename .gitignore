@@ -38,7 +38,7 @@ jspm_packages/
 elm-stuff/
 
 # Compiled elm
-elm.js 
+elm.js
 
 # Typescript v1 declaration files
 typings/
@@ -60,3 +60,5 @@ typings/
 
 # dotenv environment variables file
 .env
+
+elm.js
