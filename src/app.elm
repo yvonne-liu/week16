@@ -23,6 +23,22 @@ type Msg
     = ChangeView String
 
 
+
+-- | Diaphragm
+-- | MaleCondom
+-- update : Msg -> Model -> Model
+-- update msg model =
+--   case msg of
+--     ToggleNotifications ->
+--       { model | notifications = not model.notifications }
+--
+--     ToggleAutoplay ->
+--       { model | autoplay = not model.autoplay }
+--
+--     ToggleLocation ->
+--       { model | location = not model.location }
+
+
 model =
     ""
 
@@ -32,6 +48,10 @@ update msg model =
     case msg of
         ChangeView newView ->
             newView
+
+
+
+-- Diaphragm
 
 
 view model =
@@ -137,7 +157,25 @@ nonhormonal model =
         , h1 [] [ Html.text "CONTRACEPTIVE METHODS" ]
         , h2 [] [ Html.text "Non-hormonal" ]
         , h2 [] [ Html.text "Hormonal" ]
+        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Diaphragm/cap with spermicide" ]
+        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Male Condom" ]
+        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Female Condom" ]
+        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "IUD" ]
+        , section [ Html.Attributes.class "NH-Methods" ] [ Html.text "Natural Family Planning" ]
+
+        -- , div []
+        -- [conmethod Diaphragm "Diaphragm"
+        -- , conmethod MaleCondom "Male Condom"
+        -- ]
         ]
+
+
+
+-- conmethod : msg -> String -> Html msg
+-- conmethod msg name =
+--     div [ type_ "conmethod", onclick msg ] []
+--     , text name
+--     ]
 
 
 appHeader =
