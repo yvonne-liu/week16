@@ -125,13 +125,13 @@ contraceptiveTypes model =
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "nonhormonal") ]
                 [ Html.text "Non-hormonal" ]
-            , p [] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
+            , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
         , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "hormonal") ]
                 [ Html.text "Hormonal" ]
-            , p [] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
+            , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
         ]
 
