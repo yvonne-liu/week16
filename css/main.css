@@ -6,8 +6,8 @@ body {
 }
 
 .svg-home {
-  width: 15em;
-  height: 15em;
+  width: 10em;
+  height: 10em;
   color: white;
   position: absolute;
   top: 50%;
@@ -30,7 +30,7 @@ body {
   left: 50%;
   top: 40%;
   transform: translate(-50%, -50%);
-  font-size: 4em;
+  font-size: 1.8em;
   width: 70%;
 }
 
@@ -40,7 +40,7 @@ body {
   position: absolute;
   border: none;
   background: none;
-  font-size: 3em;
+  font-size: 1.3em;
   color: white;
   bottom: 5%;
   left: 50%;
@@ -61,7 +61,7 @@ body {
   height: 30vh;
   border: none;
   background: none;
-  font-size: 3em;
+  font-size: 1.5em;
   color: white;
 }
 
