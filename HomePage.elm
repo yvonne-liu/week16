@@ -41,11 +41,7 @@ view model =
 choosePage model =
     case model of
         "" ->
-            div []
-                [ div [ onClick (ChangeView "options") ] [ text "options" ]
-                , div [ onClick (ChangeView "") ] [ text "home" ]
-                , home model
-                ]
+            home model
 
         "options" ->
             options model
@@ -78,4 +74,4 @@ home model =
 
 
 options model =
-    h1 [] [ text "Options Page" ]
+    h1 [] [ text "Hi guys" ]
