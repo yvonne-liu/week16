@@ -103,7 +103,17 @@ options model =
         [ appHeader
         , div [ Html.Attributes.class "full-screen" ]
             [ p [ Html.Attributes.class "full-screen__text" ]
-                [ Html.text "Are you comfortable with your current choice of contraceptive? Do you know all your options? Have you asked all the right questions?" ]
+                [ Html.text "Are you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "comfortable " ]
+                , Html.text "with your current choice of contraceptive? Do you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "know " ]
+                , Html.text "all your options? Have you "
+                , span [ Html.Attributes.class "italics" ]
+                    [ Html.text "asked " ]
+                , Html.text "all the right questions?"
+                ]
             , button
                 [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveTypes") ]
                 [ Html.text "Learn about your contraceptive choices" ]

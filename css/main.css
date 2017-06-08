@@ -11,6 +11,10 @@ body {
   height: 100%;
 }
 
+.italics {
+  font-style: italic;
+}
+
 /* set height of page to 100% */
 #elm-code-is-loaded-here,
 .app-model,
