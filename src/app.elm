@@ -16,7 +16,7 @@ main =
 
 
 type alias Model =
-    String
+    { view : String }
 
 
 type Msg
@@ -24,18 +24,14 @@ type Msg
 
 
 model =
-    ""
+    { view = "" }
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
         ChangeView newView ->
-            newView
-
-
-
--- Diaphragm
+            { model | view = newView }
 
 
 view model =
@@ -44,7 +40,7 @@ view model =
 
 
 choosePage model =
-    case model of
+    case model.view of
         "" ->
             home model
 
@@ -71,6 +67,7 @@ home model =
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "options") ]
                 [ Html.text "What you must know about contraceptive methods" ]
+            , div [] [ Html.text model.view ]
             ]
         , svg
             [ Svg.Attributes.class "svg-home", fill "none", attribute "stroke" "white", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
@@ -157,12 +154,16 @@ nonhormonal model =
             , div [ Html.Attributes.class "contra-methods-tab" ]
                 [ h2 [] [ Html.text "Hormonal" ] ]
             ]
-        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "Diaphragm/cap with spermicide" ]
-        , section [ Html.Attributes.class " contra-methods-item NH-Methods" ] [ Html.text "Male Condom" ]
-        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "Female Condom" ]
-        , section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text "IUD" ]
-        , section [ Html.Attributes.class "contra-methods-item\n        NH-Methods" ] [ Html.text "Natural Family Planning" ]
+        , div [ Html.Attributes.class "contra-methods-container" ] (List.map sectionDiv nhMethods)
         ]
+
+
+nhMethods =
+    [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning" ]
+
+
+sectionDiv name =
+    section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
 
 
 appHeader =
