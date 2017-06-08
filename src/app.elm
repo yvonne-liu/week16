@@ -51,6 +51,9 @@ choosePage model =
         "contraceptiveTypes" ->
             contraceptiveTypes model
 
+        "nonhormonal" ->
+            nonhormonal model
+
         _ ->
             div [] [ Html.text "Wrong place" ]
 
@@ -132,6 +135,8 @@ nonhormonal model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
         , h1 [] [ Html.text "CONTRACEPTIVE METHODS" ]
+        , h2 [] [ Html.text "Non-hormonal" ]
+        , h2 [] [ Html.text "Hormonal" ]
         ]
 
 
