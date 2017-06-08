@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  font-size: 16px;
 }
 
 body {
@@ -7,6 +8,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  height: 100%;
+}
+
+/* set height of page to 100% */
+.app-model,
+#elm-code-is-loaded-here,
+.screen-container {
   height: 100%;
 }
 
@@ -20,9 +28,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.screen-container {
-  height: 100%;
-}
 
 .full-screen {
   background-color: palevioletred;
@@ -63,7 +68,7 @@ body {
 }
 
 .half-screen--button {
-  height: 30vh;
+  height: 50%;
   border: none;
   background: none;
   font-size: 1.5em;
