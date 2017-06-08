@@ -37,6 +37,10 @@ body {
   height: 3em;
 }
 
+.nav-container__svg {
+  padding-top: 0.5em;
+}
+
 
 .full-screen {
   background-color: palevioletred;
