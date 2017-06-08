@@ -75,23 +75,28 @@ home model =
 
 contraceptiveTypes model =
     div [ class "screen-container" ]
-        [ elmHubHeader
+        [ appHeader
         , div
             [ class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ class "half-screen--button" ]
+                [ class "half-screen--button", onClick (ChangeView "nonhormonal") ]
                 [ text "Non-hormonal" ]
             ]
         , div [ class "half-screen half-screen--hormonal" ]
             [ button
-                [ class "half-screen--button" ]
+                [ class "half-screen--button", onClick (ChangeView "hormonal") ]
                 [ text "Hormonal" ]
             , p [] [ text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
         ]
 
 
-elmHubHeader =
+nonhormonal model =
+    div [ class "screen-container" ]
+        [ appHeader ]
+
+
+appHeader =
     nav [ class "nav-container" ]
         [ div [ class "nav-container__image" ]
             [ img [ class "nav-image", src "http://via.placeholder.com/50x50" ] []
@@ -101,6 +106,7 @@ elmHubHeader =
                 [ text "My tracker" ]
             ]
         ]
+
 
 
 -- options : Model -> Html Msg
