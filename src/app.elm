@@ -108,23 +108,28 @@ options model =
 
 contraceptiveTypes model =
     div [ Html.Attributes.class "screen-container" ]
-        [ elmHubHeader
+        [ appHubHeader
         , div
             [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "nonhormonal") ]
                 [ Html.text "Non-hormonal" ]
             ]
         , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "hormonal") ]
                 [ Html.text "Hormonal" ]
             , p [] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
         ]
 
 
-elmHubHeader =
+nonhormonal model =
+    div [ class "screen-container" ]
+        [ appHeader ]
+
+
+appHeader =
     nav [ Html.Attributes.class "nav-container" ]
         [ div [ Html.Attributes.class "nav-container__image" ]
             [ img [ Html.Attributes.class "nav-image", src "http://via.placeholder.com/50x50" ] []
