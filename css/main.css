@@ -2,10 +2,51 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.svg-home {
+  width: 15em;
+  height: 15em;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .screen-container {
   height: 100vh;
+}
+
+.full-screen {
+  background-color: palevioletred;
+  height: 90%;
+}
+
+.full-screen__text {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  width: 70%;
+}
+
+.full-screen__button {
+  width: 70%;
+  padding: 0.8em;
+  position: absolute;
+  border: none;
+  background: none;
+  font-size: 1em;
+  color: white;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: palevioletred;
+  background-color: white;
 }
 
 .half-screen {
@@ -35,6 +76,7 @@ body {
 /* This code is for the nav bar */
 .nav-container {
   padding: 10px 20px;
+  height: 10%;
 }
 
 .nav-container__image {
