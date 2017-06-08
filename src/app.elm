@@ -48,6 +48,9 @@ choosePage model =
         "options" ->
             options model
 
+        "contraceptiveTypes" ->
+            contraceptiveTypes model
+
         _ ->
             div [] [ Html.text "Wrong place" ]
 
@@ -61,7 +64,7 @@ home model =
         [ div [ Html.Attributes.class "half-screen half-screen--options" ]
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "options") ]
-                [ Html.text "my options" ]
+                [ Html.text "What you must know about contraceptive methods" ]
             ]
         , svg
             [ Svg.Attributes.class "svg-home", fill "none", attribute "stroke" "white", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
@@ -80,7 +83,7 @@ home model =
         , div [ Html.Attributes.class "half-screen half-screen--monitor" ]
             [ button
                 [ Html.Attributes.class "half-screen--button" ]
-                [ Html.text "my space" ]
+                [ Html.text "My Contraception Calendar" ]
             ]
         ]
 
@@ -96,7 +99,7 @@ options model =
             [ p [ Html.Attributes.class "full-screen__text" ]
                 [ Html.text "Are you comfortable with your current choice of contraceptive? Do you know all your options? Have you asked all the right questions?" ]
             , button
-                [ Html.Attributes.class "full-screen__button" ]
+                [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveTypes") ]
                 [ Html.text "Learn about your contraceptive choices" ]
             ]
         ]
@@ -114,6 +117,7 @@ contraceptiveTypes model =
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "nonhormonal") ]
                 [ Html.text "Non-hormonal" ]
+            , p [] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
         , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
@@ -126,7 +130,9 @@ contraceptiveTypes model =
 
 nonhormonal model =
     div [ Html.Attributes.class "screen-container" ]
-        [ appHeader ]
+        [ appHeader
+        , h1 [] [ Html.text "CONTRACEPTIVE METHODS" ]
+        ]
 
 
 appHeader =
