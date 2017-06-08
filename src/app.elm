@@ -35,9 +35,8 @@ update msg model =
 
 
 view model =
-    div []
-        [ div [] [ choosePage model ]
-        ]
+    div [ Html.Attributes.class "app-model" ]
+        [ choosePage model ]
 
 
 choosePage model =
