@@ -1,8 +1,21 @@
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  height: 100%;
+}
+
+/* set height of page to 100% */
+#elm-code-is-loaded-here,
+.app-model,
+.screen-container {
+  height: 100%;
 }
 
 .svg-home {
@@ -24,9 +37,6 @@ body {
   height: 3em;
 }
 
-.screen-container {
-  height: 100vh;
-}
 
 .full-screen {
   background-color: palevioletred;
@@ -69,6 +79,7 @@ body {
 }
 
 .half-screen--button {
+  height: 50%;
   border: none;
   background: none;
   padding: 1em;
