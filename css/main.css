@@ -8,11 +8,20 @@ body {
 .svg-home {
   width: 10em;
   height: 10em;
-  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.svg-header {
+  width: 3em;
+  height: 3em;
+}
+
+.calendar-header {
+  width: 3em;
+  height: 3em;
 }
 
 .screen-container {
@@ -29,6 +38,7 @@ body {
   position: absolute;
   left: 50%;
   top: 40%;
+  text-align: left;
   transform: translate(-50%, -50%);
   font-size: 1.8em;
   width: 70%;
@@ -99,6 +109,10 @@ body {
 }
 
 /* This code is for the contraceptive types page */
+.contraceptive-tag {
+  color: white; 
+}
+
 .half-screen--non-hormonal {
   background-color: rgb(255, 140, 99);
 }
