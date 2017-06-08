@@ -16,22 +16,33 @@ main =
 
 
 type alias Model =
-    String
+    { view : String, age : Int }
 
 
 type Msg
     = ChangeView String
+    | ChangeAge Int
+
+
+type NHMethods
+    = A
+    | B
+    | C
+    | D
 
 
 model =
-    ""
+    { view = "", age = 7 }
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
         ChangeView newView ->
-            newView
+            { model | view = newView }
+
+        ChangeAge age ->
+            { model | age = age }
 
 
 view model =
@@ -41,7 +52,7 @@ view model =
 
 
 choosePage model =
-    case model of
+    case model.view of
         "" ->
             home model
 
@@ -50,6 +61,9 @@ choosePage model =
 
         "contraceptiveTypes" ->
             contraceptiveTypes model
+
+        "nonhormonal" ->
+            nonhormonal model
 
         _ ->
             div [] [ Html.text "Wrong place" ]
@@ -65,6 +79,7 @@ home model =
             [ button
                 [ Html.Attributes.class "half-screen--button", onClick (ChangeView "options") ]
                 [ Html.text "What you must know about contraceptive methods" ]
+            , div [] [ Html.text model.view ]
             ]
         , svg
             [ Svg.Attributes.class "svg-home", fill "none", attribute "stroke" "white", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
@@ -132,7 +147,16 @@ nonhormonal model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
         , h1 [] [ Html.text "CONTRACEPTIVE METHODS" ]
+        , div [] (List.map sectionDiv sections)
         ]
+
+
+sections =
+    [ "a", "b" ]
+
+
+sectionDiv name =
+    section [] [ Html.text name ]
 
 
 appHeader =
