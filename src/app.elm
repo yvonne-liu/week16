@@ -106,7 +106,9 @@ options model =
                 [ Html.text "Are you "
                 , span [ Html.Attributes.class "italics" ]
                     [ Html.text "comfortable " ]
-                , Html.text "with your current choice of contraceptive? Do you "
+                , code []
+                    [ Html.text "with " ]
+                , Html.text "your current choice of contraceptive? Do you "
                 , span [ Html.Attributes.class "italics" ]
                     [ Html.text "know " ]
                 , Html.text "all your options? Have you "
