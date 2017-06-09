@@ -155,6 +155,8 @@ contraceptiveMethods model =
                 [ h2 [] [ Html.text "Hormonal" ] ]
             ]
         , div [ Html.Attributes.class "contra-methods-container" ] (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
+        , div [ Html.Attributes.class "contra-methods-container" ]
+            (List.map hormonalMethodsDisplay hormonalMethodsList)
         ]
 
 
@@ -168,6 +170,11 @@ hormonalMethodsList =
 
 nonhormonalMethodsDisplay name =
     section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
+
+
+hormonalMethodsDisplay name =
+    section [ Html.Attributes.class "contra-methods-item H-methods" ]
+        [ Html.text name ]
 
 
 appHeader =
