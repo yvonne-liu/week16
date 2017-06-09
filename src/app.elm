@@ -139,16 +139,16 @@ contraceptiveTypes model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
         , div
-            [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
+            [ Html.Attributes.class "half-screen half-screen--non-hormonal", onClick (ChangeOptionsAndView "contraceptiveMethods" "nonhormonal") ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeOptionsAndView "contraceptiveMethods" "nonhormonal") ]
-                [ Html.text "Non-hormonal" ]
+                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.text "NON-HORMONAL" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
-        , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
+        , div [ Html.Attributes.class "half-screen half-screen--hormonal", onClick (ChangeOptionsAndView "contraceptiveMethods" "hormonal") ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeOptionsAndView "contraceptiveMethods" "hormonal") ]
-                [ Html.text "Hormonal" ]
+                [ Html.Attributes.class "half-screen--button" ]
+                [ Html.text "HORMONAL" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
         ]
@@ -183,7 +183,7 @@ hormonalOptions model =
 
 
 nonhormonalMethodsList =
-    [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning" ]
+    [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning", "Withdrawal", "Sterilization" ]
 
 
 hormonalMethodsList =
