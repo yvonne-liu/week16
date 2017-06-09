@@ -154,19 +154,19 @@ contraceptiveMethods model =
             , div [ Html.Attributes.class "contra-methods-tab" ]
                 [ h2 [] [ Html.text "Hormonal" ] ]
             ]
-        , div [ Html.Attributes.class "contra-methods-container" ] (List.map sectionDiv nhMethods)
+        , div [ Html.Attributes.class "contra-methods-container" ] (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
         ]
 
 
-nhMethods =
+nonhormonalMethodsList =
     [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning" ]
 
 
-hmethods =
+hormonalMethodsList =
     [ "Contraceptive injection", "Implant", "Intrauterine system (IUS)", "Contraceptive patch", "Contraceptive vaginal ring", "Combined pill (COC)", "Progestogen-only pill(POP)" ]
 
 
-sectionDiv name =
+nonhormonalMethodsDisplay name =
     section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
 
 
