@@ -203,7 +203,7 @@ appHeader =
     nav [ Html.Attributes.class "nav-container" ]
         [ div [ Html.Attributes.class "nav-container__svg nav-container__image" ]
             [ svg
-                [ Svg.Attributes.class "svg-header", fill "none", attribute "stroke" "palevioletred", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32" ]
+                [ Svg.Attributes.class "svg-header", fill "none", attribute "stroke" "palevioletred", attribute "stroke-linejoin" "round", attribute "stroke-width" "2", viewBox "0 0 32 32", onClick (ChangeView "") ]
                 [ Svg.node "circle"
                     [ attribute "cx" "5", attribute "cy" "6", attribute "r" "4" ]
                     []
