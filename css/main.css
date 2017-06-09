@@ -15,6 +15,34 @@ body {
   font-style: italic;
 }
 
+/*CSS for hard code method page (6th view)*/
+
+.iud-svg {
+  width: 10em;
+  height: 10em;
+  color: white;
+}
+
+.method-title {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 2em 3em 0 3em;
+}
+
+.method-description {
+  color: white;
+  padding: 0 3em 0 3em;
+  margin-top: 0; 
+  font-size: 1.2em;
+}
+
+.full-screen__method {
+    color: white;
+    font-size: 1.5em;
+    width: 70%;
+  }
+
 /* set height of page to 100% */
 #elm-code-is-loaded-here,
 .app-model,
@@ -70,7 +98,7 @@ body {
   background: none;
   font-size: 1.3em;
   color: white;
-  bottom: 5%;
+  bottom: 3%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: palevioletred;
