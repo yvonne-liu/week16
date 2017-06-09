@@ -191,11 +191,11 @@ hormonalMethodsList =
 
 
 nonhormonalMethodsDisplay name =
-    section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
+    section [ Html.Attributes.class "contra-methods-item NH-Methods", onClick (ChangeView "hardcodeIUD") ] [ Html.text name ]
 
 
 hormonalMethodsDisplay name =
-    section [ Html.Attributes.class "contra-methods-item H-methods" ]
+    section [ Html.Attributes.class "contra-methods-item H-methods", onClick (ChangeView "hardcodeIUD") ]
         [ Html.text name ]
 
 
@@ -438,6 +438,6 @@ hardcodeIUD model =
             , p [ Html.Attributes.class "method-description" ] [ Html.text "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt tempor aliquet. Aenean libero diam, sollicitudin ut feugiat ac, venenatis rhoncus enim. Morbi et mi eu quam vehicula fermentum non a erat." ]
             ]
         , button
-            [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveTypes") ]
+            [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveMethods") ]
             [ Html.text "Back to options" ]
         ]
