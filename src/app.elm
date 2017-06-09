@@ -162,6 +162,10 @@ nhMethods =
     [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning" ]
 
 
+hmethods =
+    [ "Contraceptive injection", "Implant", "Intrauterine system (IUS)", "Contraceptive patch", "Contraceptive vaginal ring", "Combined pill (COC)", "Progestogen-only pill(POP)" ]
+
+
 sectionDiv name =
     section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
 
