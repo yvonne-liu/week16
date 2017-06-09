@@ -25,7 +25,7 @@ type Msg
 
 
 model =
-    { view = "", hormonalOptions = "nonhormonal" }
+    { view = "", hormonalOptions = "" }
 
 
 update : Msg -> Model -> Model
@@ -165,11 +165,11 @@ contraceptiveMethods model =
 hormonalOptions model =
     case model.hormonalOptions of
         "hormonal" ->
-            div [ Html.Attributes.class "contra-methods-container" ] (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
+            div [ Html.Attributes.class "contra-methods-container" ] (List.map hormonalMethodsDisplay hormonalMethodsList)
 
         "nonhormonal" ->
             div [ Html.Attributes.class "contra-methods-container" ]
-                (List.map hormonalMethodsDisplay hormonalMethodsList)
+                (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
 
         _ ->
             div [] []
