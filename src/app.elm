@@ -435,7 +435,7 @@ hardcodeIUD model =
                         ]
                     ]
                 ]
-            , p [ Html.Attributes.class "method-description" ] [ Html.text "IUD is non-hormonal, and is suitable for women who want long-acting reversible contraception for up to 5 or 10 years and wish to avoid daily, weekly or monthly regimen. Users are at a small risk of infection at insertion and of expulsion, and it does not protect against HIV infection (AIDS) and other sexually transmitted infections (STIs)." ]
+            , p [ Html.Attributes.class "method-description" ] [ Html.text "IUD is non-hormonal, and is suitable for women who want long-acting reversible contraception for up to 5 or 10 years and wish to avoid daily, weekly or monthly regimen. Users are at a small risk of infection at insertion and of expulsion, and it does not protect against sexually transmitted infections." ]
             ]
         , button
             [ Html.Attributes.class "full-screen__button", onClick (ChangeView "contraceptiveMethods") ]
