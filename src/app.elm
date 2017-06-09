@@ -68,7 +68,7 @@ home model =
     div [ Html.Attributes.class "screen-container" ]
         [ div [ Html.Attributes.class "half-screen half-screen--options" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "hardcodeIUD") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "options") ]
                 [ Html.text "What you must know about contraceptive methods" ]
             , div [] [ Html.text model.view ]
             ]
