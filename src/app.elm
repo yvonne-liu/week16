@@ -50,8 +50,8 @@ choosePage model =
         "contraceptiveTypes" ->
             contraceptiveTypes model
 
-        "nonhormonal" ->
-            nonhormonal model
+        "contraceptiveMethods" ->
+            contraceptiveMethods model
 
         _ ->
             div [] [ Html.text "Wrong place" ]
@@ -130,7 +130,7 @@ contraceptiveTypes model =
         , div
             [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "nonhormonal") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "contraceptiveMethods") ]
                 [ Html.text "Non-hormonal" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
@@ -143,7 +143,7 @@ contraceptiveTypes model =
         ]
 
 
-nonhormonal model =
+contraceptiveMethods model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
         , header [ Html.Attributes.class "contra-methods-header" ]
@@ -154,16 +154,27 @@ nonhormonal model =
             , div [ Html.Attributes.class "contra-methods-tab" ]
                 [ h2 [] [ Html.text "Hormonal" ] ]
             ]
-        , div [ Html.Attributes.class "contra-methods-container" ] (List.map sectionDiv nhMethods)
+        , div [ Html.Attributes.class "contra-methods-container" ] (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
+        , div [ Html.Attributes.class "contra-methods-container" ]
+            (List.map hormonalMethodsDisplay hormonalMethodsList)
         ]
 
 
-nhMethods =
+nonhormonalMethodsList =
     [ "Diaphragm", "Male Condom", "Female Condom", "IUD", "Natural Family Planning" ]
 
 
-sectionDiv name =
+hormonalMethodsList =
+    [ "Contraceptive injection", "Implant", "Intrauterine system (IUS)", "Contraceptive patch", "Contraceptive vaginal ring", "Combined pill (COC)", "Progestogen-only pill(POP)" ]
+
+
+nonhormonalMethodsDisplay name =
     section [ Html.Attributes.class "contra-methods-item NH-Methods" ] [ Html.text name ]
+
+
+hormonalMethodsDisplay name =
+    section [ Html.Attributes.class "contra-methods-item H-methods" ]
+        [ Html.text name ]
 
 
 appHeader =
