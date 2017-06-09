@@ -160,9 +160,9 @@ contraceptiveMethods model =
         , header [ Html.Attributes.class "contra-methods-header" ]
             [ h1 [] [ Html.text "CONTRACEPTIVE METHODS" ] ]
         , div [ Html.Attributes.class "contra-methods-tab-container" ]
-            [ div [ Html.Attributes.class "contra-methods-tab" ]
+            [ div [ Html.Attributes.class "contra-methods-tab contra-methods-tab--nonhormonal" ]
                 [ h2 [ onClick <| ChangeOptions "nonhormonal" ] [ Html.text "Non-hormonal" ] ]
-            , div [ Html.Attributes.class "contra-methods-tab" ]
+            , div [ Html.Attributes.class "contra-methods-tab contra-methods-tab--hormonal" ]
                 [ h2 [ onClick <| ChangeOptions "hormonal" ] [ Html.text "Hormonal" ] ]
             ]
         , hormonalOptions model

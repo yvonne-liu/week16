@@ -201,6 +201,15 @@ body {
   border-top: 0;
   border-left: 0;
   border-right: 0;
+  box-sizing: border-box;
+}
+
+.contra-methods-tab--nonhormonal {
+  border-right: 1.5px solid palevioletred;
+}
+
+.contra-methods-tab--hormonal {
+  border-left: 1.5px solid palevioletred;
 }
 
 .contra-methods-item {
