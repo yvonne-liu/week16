@@ -16,15 +16,16 @@ main =
 
 
 type alias Model =
-    { view : String }
+    { view : String, hormonalOptions : String }
 
 
 type Msg
     = ChangeView String
+    | ChangeOptions String
 
 
 model =
-    { view = "" }
+    { view = "", hormonalOptions = "" }
 
 
 update : Msg -> Model -> Model
@@ -32,6 +33,9 @@ update msg model =
     case msg of
         ChangeView newView ->
             { model | view = newView }
+
+        ChangeOptions options ->
+            { model | hormonalOptions = options }
 
 
 view model =
@@ -139,7 +143,7 @@ contraceptiveTypes model =
             ]
         , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "hormonal") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "contraceptiveMethods") ]
                 [ Html.text "Hormonal" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
@@ -153,14 +157,25 @@ contraceptiveMethods model =
             [ h1 [] [ Html.text "CONTRACEPTIVE METHODS" ] ]
         , div [ Html.Attributes.class "contra-methods-tab-container" ]
             [ div [ Html.Attributes.class "contra-methods-tab" ]
-                [ h2 [] [ Html.text "Non-hormonal" ] ]
+                [ h2 [ onClick <| ChangeOptions "nonhormonal" ] [ Html.text "Non-hormonal" ] ]
             , div [ Html.Attributes.class "contra-methods-tab" ]
-                [ h2 [] [ Html.text "Hormonal" ] ]
+                [ h2 [ onClick <| ChangeOptions "hormonal" ] [ Html.text "Hormonal" ] ]
             ]
-        , div [ Html.Attributes.class "contra-methods-container" ] (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
-        , div [ Html.Attributes.class "contra-methods-container" ]
-            (List.map hormonalMethodsDisplay hormonalMethodsList)
+        , hormonalOptions model
         ]
+
+
+hormonalOptions model =
+    case model.hormonalOptions of
+        "hormonal" ->
+            div [ Html.Attributes.class "contra-methods-container" ] (List.map hormonalMethodsDisplay hormonalMethodsList)
+
+        "nonhormonal" ->
+            div [ Html.Attributes.class "contra-methods-container" ]
+                (List.map nonhormonalMethodsDisplay nonhormonalMethodsList)
+
+        _ ->
+            div [] []
 
 
 nonhormonalMethodsList =
