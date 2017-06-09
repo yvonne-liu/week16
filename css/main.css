@@ -204,6 +204,11 @@ body {
   box-sizing: border-box;
 }
 
+.contra-methods-tab:hover {
+  color: white;
+  background: rgb(59, 229, 195);
+}
+
 .contra-methods-tab--nonhormonal {
   border-right: 1.5px solid palevioletred;
 }
