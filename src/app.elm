@@ -22,6 +22,7 @@ type alias Model =
 type Msg
     = ChangeView String
     | ChangeOptions String
+    | ChangeOptionsAndView String String
 
 
 model =
@@ -36,6 +37,9 @@ update msg model =
 
         ChangeOptions options ->
             { model | hormonalOptions = options }
+
+        ChangeOptionsAndView view options ->
+            { model | view = view, hormonalOptions = options }
 
 
 view model =
@@ -137,13 +141,13 @@ contraceptiveTypes model =
         , div
             [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "contraceptiveMethods") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeOptionsAndView "contraceptiveMethods" "nonhormonal") ]
                 [ Html.text "Non-hormonal" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
         , div [ Html.Attributes.class "half-screen half-screen--hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "contraceptiveMethods") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeOptionsAndView "contraceptiveMethods" "hormonal") ]
                 [ Html.text "Hormonal" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that utilise hormones to prevent pregnancy" ]
             ]
