@@ -50,8 +50,8 @@ choosePage model =
         "contraceptiveTypes" ->
             contraceptiveTypes model
 
-        "nonhormonal" ->
-            nonhormonal model
+        "contraceptiveMethods" ->
+            contraceptiveMethods model
 
         _ ->
             div [] [ Html.text "Wrong place" ]
@@ -130,7 +130,7 @@ contraceptiveTypes model =
         , div
             [ Html.Attributes.class "half-screen half-screen--non-hormonal" ]
             [ button
-                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "nonhormonal") ]
+                [ Html.Attributes.class "half-screen--button", onClick (ChangeView "contraceptiveMethods") ]
                 [ Html.text "Non-hormonal" ]
             , p [ Html.Attributes.class "contraceptive-tag" ] [ Html.text "Contraceptive methods that don't utilise hormones to prevent pregnancy" ]
             ]
@@ -143,7 +143,7 @@ contraceptiveTypes model =
         ]
 
 
-nonhormonal model =
+contraceptiveMethods model =
     div [ Html.Attributes.class "screen-container" ]
         [ appHeader
         , header [ Html.Attributes.class "contra-methods-header" ]
